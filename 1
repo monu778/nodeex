@@ -1,0 +1,28 @@
+var events  = require('events');
+var eventEmitter = new events.EventEmitter();
+
+var ch = function connected() {
+	console.log("Successfully Connected");
+        eventEmitter.emit('data_recieved');
+}
+
+eventEmitter.on('data_recevied',function() {
+
+	console.log("data received");
+});
+
+eventEmitter.emit("Connetion");
+
+console.log("Program Ended");
+
+
+console.log("This is first");
+
+setImmediate(function() {
+	console.log("THis is second");
+});
+
+console.log("This is third");
+\
+
+
